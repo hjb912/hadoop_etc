@@ -3,4 +3,14 @@
         <name>fs.defaultFS</name>
         <value>hdfs://mycluster</value>
     </property>
+    <!-- for hive -->
+    <property>
+    	<name>hadoop.proxyuser.root.groups</name>
+   	<value>*</value>
+    </property>
+    <property>
+  	<name>hadoop.proxyuser.root.hosts</name>
+    	<value>*</value>
+    </property>
+    <!-- for hive -->
 </configuration>
