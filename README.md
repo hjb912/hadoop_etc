@@ -55,3 +55,12 @@
   ~/conf add config hive-env.sh && hive-site.xml
 
 ## config all *.[xml,sh]
+
+## sqoop
+
+
+  	sqoop-import --options-file `sqoop_import_config`
+
+## flume
+
+  	lume-ng agent  --conf-file flume-env.conf --name a1
