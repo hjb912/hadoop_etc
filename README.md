@@ -58,9 +58,9 @@
 
 ## sqoop
 
-
-  	sqoop-import --options-file `sqoop_import_config`
+  sqoop-import --options-file `sqoop_import_config`
+  sqoop-export --options-file `sqoop_export_config`
 
 ## flume
 
-  	lume-ng agent  --conf-file flume-env.conf --name a1
+  flume-ng agent  --conf-file flume-env.conf --name a1

@@ -1,0 +1,17 @@
+--connect
+jdbc:mysql://localhost:port/testsqoop
+--username
+username
+--password
+pwd
+--table
+a_table
+--export-dir
+/user/hive/warehouse/t_entry/part-m-00000
+--update-key
+id
+--fields-terminated-by
+'\t'
+--lines-terminated-by
+'\n'
+--validate
