@@ -19,4 +19,25 @@
 		<value>hivepassword</value>
 		<description>password for connecting to mysql server</description>
 	</property>
+	<!-- for spark -->
+	<property>
+    	<name>hive.metastore.rawstore.impl</name>
+    	<value>org.apache.hadoop.hive.metastore.ObjectStore</value>
+    	<description>
+      		Name of the class that implements org.apache.hadoop.hive.metastore.rawstore interface.
+      		This class is used to store and retrieval of raw metadata objects such as table, database
+    	</description>
+    </property>
+    <property>
+    	<name>hive.exec.scratchdir</name>
+    	<value>hdfs://127.0.0.1:9000/user/hive/tmp</value>
+    </property>
+    <property>
+        <name>hive.metastore.warehouse.dir</name>
+    	<value>hdfs://127.0.0.1:9000/user/hive/warehouse</value>
+    </property>
+    <property>
+        <name>hive.metastore.uris</name>
+        <value>thrift://127.0.0.1:9083</value>
+    </property>
 </configuration>

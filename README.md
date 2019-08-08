@@ -26,7 +26,13 @@
     export HIVE_HOME=/usr/local/apache-hive-3.1.1-bin
     export PATH=$HIVE_HOME/bin:$PATH
     export HCAT_HOME=$HIVE_HOME/hcatalog
+    # sqoop
+    export SQOOP_HOME=/usr/local/sqoop-1.4.7.bin__hadoop-2.6.0
+    export PATH=$SQOOP_HOME/bin:$PATH
 
+    export LD_LIBRARY_PATH=$HADOOP_HOME/lib/native
+    # spark ipython
+    export PYSPARK_DRIVER_PYTHON=ipython
 
 
 ## install & generate ssh
@@ -64,3 +70,12 @@
 ## flume
 
   flume-ng agent  --conf-file flume-env.conf --name a1
+
+## spark
+
+    add config:
+        $SPARK_HOME/conf + hive-site.xml
+        $SPARK_HOME/conf + spark-env.sh
+    start servcer:
+        $HIVE_HOME/bin/hiveserver2 for client query
+        hive --service metastore for thrift
