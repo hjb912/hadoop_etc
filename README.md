@@ -79,3 +79,27 @@
     start servcer:
         $HIVE_HOME/bin/hiveserver2 for client query
         hive --service metastore for thrift
+
+## kafka
+
+    relies on Zookeeper
+
+    add cluster config/server.properties:
+        broker.id:0~x
+        listeners=PLAINTEXT://:9092~909x
+        log.dirs=/tmp/kafka-logs-x
+    bin/kafka-server-start.sh config/server-x.properties &
+
+    kafka as sink with flume:
+        bin/flume-ng agent --conf-file flume-env.conf --name a1 -Dflume.root.logger=INFO,console
+        ...
+            a1.sinks.k1.type = org.apache.flume.sink.kafka.KafkaSink
+            a1.sinks.k1.kafka.topic = mytopic
+            a1.sinks.k1.kafka.bootstrap.servers = localhost:9092
+            a1.sinks.k1.kafka.flumeBatchSize = 20
+            a1.sinks.k1.kafka.producer.acks = 1
+            a1.sinks.k1.kafka.producer.linger.ms = 1
+            a1.sinks.k1.kafka.producer.compression.type = snappy
+        ...
+
+    kafka-* [producer, cosumer]
