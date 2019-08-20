@@ -103,3 +103,12 @@
         ...
 
     kafka-* [producer, cosumer]
+
+
+## spark-streaming
+
+    kafka as source:
+    demo:
+        cd $SPARK_HOME
+        && bin/spark-submit --packages org.apache.spark:spark-streaming-kafka-0-8_2.11:2.4.3 spark-direct-kafka.py localhost:port mytopic
+
